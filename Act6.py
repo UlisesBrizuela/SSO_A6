@@ -1,3 +1,8 @@
+'''
+Brizuela Arias Ulises Israel 
+Actividad 6 - Seminario de solucion de problemas de sistemas operativos
+'''
+
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel
 from PyQt5.QtGui import QPixmap, QIcon
@@ -15,24 +20,24 @@ class ImageThread(QThread):
         while True:
 #           SI LA DIRECCION RECIBIDA ES R=RIGHT ENTONCES VA AVANZANDO HASTA LLEGAR AL MIMITE DE LA VENTANA
             if self.direction == 'R':
-                self.x += 1
+                self.x += 2
 #               AL LLEGAR AL LIMITE DE LA VENTANA CAMBIA EL ATRIBUTO A L=LEFT Y CAMBIA DE DIRECCION EL MOVIMIENTO
-                if self.x == 650:
+                if self.x == 650: 
                     self.direction = 'L'
 #           Y AHORA CON LA NUEVA DIRECCION DE MOVIMIENTO AVANZA EN DIRECCION CONTRARIA HASTA LLEGAR AL ORIGEN
             elif self.direction == 'L':
-                self.x -= 1
+                self.x -= 2
 #               AL LLEGAR AL ORIGEN VUELVE A CAMBIAR LA DIRECCION DEL MOVIMIENTO
                 if self.x == 0:
                     self.direction = 'R'
 
 #           HACEMOS LO MISMO QUE ARRIBA SOLO QUE AHORA CON LAS POSICIONES EN VERTICAL ARRIBA Y ABAJO RESPECTIVAMENTE 
             if self.direction == 'D':
-                self.y += 1
+                self.y += 2
                 if self.y == 650:
                     self.direction = 'U'
             elif self.direction == 'U':
-                self.y -= 1
+                self.y -= 2
                 if self.y ==0:
                     self.direction = 'D'
 
